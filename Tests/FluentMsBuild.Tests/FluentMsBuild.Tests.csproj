@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{981A73A7-F755-476F-A4B0-D86A5AD0074B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMsBuild</RootNamespace>
+    <AssemblyName>FluentMsBuild.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentAssertions, Version=3.0.107.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=3.0.107.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentAssertions.3.0.107\lib\net45\FluentAssertions.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PK.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\PK.Common.1.0.0\lib\portable-net4+sl5+wp8+win8\PK.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Choose\ChooseTest.cs" />
+    <Compile Include="Choose\ChooseActionsTest.cs" />
+    <Compile Include="Comment\CommentActionsTest.cs" />
+    <Compile Include="Extensions\ExtensionsActionsTest.cs" />
+    <Compile Include="ImportGroup\ImportGroupActionsTest.cs" />
+    <Compile Include="ItemDefinition\ItemDefinitionActionsTest.cs" />
+    <Compile Include="OnError\OnErrorActionsTest.cs" />
+    <Compile Include="Otherwise\OtherwiseTest.cs" />
+    <Compile Include="Otherwise\OtherwiseActionsTest.cs" />
+    <Compile Include="Output\OutputActionsTest.cs" />
+    <Compile Include="When\WhenTest.cs" />
+    <Compile Include="Comment\CommentTest.cs" />
+    <Compile Include="Element\ElementTest.cs" />
+    <Compile Include="ElementContainer\ElementContainerTest.cs" />
+    <Compile Include="Element\ElementActionsTest.cs" />
+    <Compile Include="Extensions\ExtensionsTest.cs" />
+    <Compile Include="ImportGroup\ImportGroupTest.cs" />
+    <Compile Include="Import\ImportTest.cs" />
+    <Compile Include="Import\ImportActionsTest.cs" />
+    <Compile Include="ItemDefinitionGroup\ItemDefinitionGroupTest.cs" />
+    <Compile Include="ItemDefinition\ItemDefinitionTest.cs" />
+    <Compile Include="ItemGroup\ItemGroupTest.cs" />
+    <Compile Include="Item\ItemTest.cs" />
+    <Compile Include="Item\ItemActionsTest.cs" />
+    <Compile Include="Metadata\MetadataTest.cs" />
+    <Compile Include="Metadata\MetadataActionsTest.cs" />
+    <Compile Include="OnError\OnErrorTest.cs" />
+    <Compile Include="Output\OutputTest.cs" />
+    <Compile Include="PropertiesTest.cs">
+      <DependentUpon>RootTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGroupTest.cs">
+      <DependentUpon>RootTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGroup\PropertyGroupTest.cs" />
+    <Compile Include="PropertyGroup\PropertyGroupActionsTest.cs" />
+    <Compile Include="Property\PropertyTest.cs" />
+    <Compile Include="Property\PropertyActionsTest.cs" />
+    <Compile Include="RootTest.cs" />
+    <Compile Include="ProjectRootElementTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyGroup\ProjectPropertyGroupElementTest.cs" />
+    <Compile Include="Property\PropertyTypesTest.cs" />
+    <Compile Include="Target\TargetTest.cs" />
+    <Compile Include="Target\TargetActionsTest.cs" />
+    <Compile Include="Task\TaskTest.cs" />
+    <Compile Include="Task\TaskActionsTest.cs" />
+    <Compile Include="InvalidProjectFileExceptionTest.cs" />
+    <Compile Include="UsingTaskBody\UsingTaskBodyTest.cs" />
+    <Compile Include="UsingTaskParameterGroup\UsingTaskParameterGroupTest.cs" />
+    <Compile Include="UsingTaskParameter\UsingTaskParameterActionsTest.cs" />
+    <Compile Include="UsingTaskParameter\UsingTaskParameterTest.cs" />
+    <Compile Include="UsingTask\UsingTaskActionsTest.cs" />
+    <Compile Include="UsingTask\UsingTaskTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sources\FluentMsBuild\FluentMsBuild.csproj">
+      <Project>{49935747-74a6-4dbe-aba2-d46f62930d3b}</Project>
+      <Name>FluentMsBuild</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestProjectFile.Open.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestProjectFile.Invalid.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

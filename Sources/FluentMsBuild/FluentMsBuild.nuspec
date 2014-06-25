@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>FluentMsBuild</id>
+    <version>0.5.0</version>
+    <title>FluentMsBuild</title>
+    <authors>Pascal Klarenbeek</authors>
+    <owners>Pascal Klarenbeek</owners>
+    <summary></summary>
+    <description>Making it possible to create and edit visual studio project (MsBuild) files fluently</description>
+    <projectUrl>https://github.com/PascalK/FluentMsBuild</projectUrl>
+    <licenseUrl>https://github.com/PascalK/FluentMsBuild/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Pascal Klarenbeek 2014</copyright>
+    <tags>FluentMsBuild PK Fluent MsBuild</tags>
+  </metadata>
+  <files>
+    <file src="..\..\Package\FluentMsBuild\lib\net45\FluentMsBuild.dll" target="lib\net45" />
+    <file src="..\..\Package\FluentMsBuild\lib\net45\FluentMsBuild.pdb" target="lib\net45" />
+    <file src="..\..\Package\FluentMsBuild\lib\net45\FluentMsBuild.xml" target="lib\net45" />
+    <file src="..\..\Package\FluentMsBuild\src\**" target="src" />
+  </files>
+</package>
