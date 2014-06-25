@@ -1,1 +1,1 @@
-# FluentMsBuild
+# FluentMsBuild ([![Build status](https://ci.appveyor.com/api/projects/status/887vs7rb2ik8v028)](https://ci.appveyor.com/project/PascalKlarenbeek/fluentmsbuild))
